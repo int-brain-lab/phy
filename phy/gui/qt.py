@@ -101,7 +101,7 @@ QT_APP = None
 def create_app():
     """Create a Qt application."""
     global QT_APP
-    QT_APP = QApplication.instance()
+    QT_APP = QApplication(sys.argv + ['', '--no-sandbox'])
     if QT_APP is None:  # pragma: no cover
         QT_APP = QApplication(sys.argv)
     return QT_APP
